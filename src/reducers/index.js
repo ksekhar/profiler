@@ -1,8 +1,9 @@
 // import { combineReducers } from 'redux';
-const { ProfileFilter } = require('../actions');
-var exports = module.exports = {};
-let initialState  = require('../api/state');
-function profilerApp(state = initialState, action) {
-  return initialState
+// const { ProfileFilter } = require('../actions');
+import { ProfileFilter } from '../actions';
+import INITIAL_STATE from '../api';
+
+function profilerApp(state = INITIAL_STATE, action) {
+  return state;
 }
-exports.profilerApp = profilerApp
+export default profilerApp;

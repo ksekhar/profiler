@@ -1,4 +1,4 @@
-var exports = module.exports = {};
+// var exports = module.exports = {};
 
 const SELECT_PROFILE = 'SELECT_PROFILE'
 const SET_PROFILE_FILTER = 'SET_PROFILE_FILTER'
@@ -14,4 +14,5 @@ function selectProfile(id) {
 function setProfileFilter(filter) {
   return { type: SET_PROFILE_FILTER, filter }
 }
-exports.ProfileFilter = ProfileFilter
+// exports.ProfileFilter = ProfileFilter
+module.exports = ProfileFilter;
