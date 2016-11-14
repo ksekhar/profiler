@@ -37,4 +37,4 @@ const INITIAL_STATE = {
   selectedProfiles: [ 1, 2 ]
 }
 
-export default INITIAL_STATE;
+export default INITIAL_STATE

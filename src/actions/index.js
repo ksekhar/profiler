@@ -15,4 +15,4 @@ function setProfileFilter(filter) {
   return { type: SET_PROFILE_FILTER, filter }
 }
 // exports.ProfileFilter = ProfileFilter
-module.exports = ProfileFilter;
+export default ProfileFilter;
