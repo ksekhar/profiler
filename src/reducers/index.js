@@ -5,8 +5,10 @@ import INITIAL_STATE from '../api';
 
 function profilerApp(state = INITIAL_STATE, action) {
   switch (action.type) {
-    case ProfileFilter.BY_SKILLS:
-      return state;
+    case 'BY_SKILLS':
+      return Object.assign({}, state, {
+        filteredList: action.payload
+      });
     default:
       return state;
   }
