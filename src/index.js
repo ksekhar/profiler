@@ -1,6 +1,6 @@
-import profilerApp from './reducers';
 import { createStore } from 'redux';
-import { bySkills } from './actions';
+import profilerApp from './reducers';
+import bySkills from './actions';
 // const { createStore } = require('redux');
 // const { profilerApp } = require('./reducers');
 

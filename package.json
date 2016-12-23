@@ -11,13 +11,20 @@
   "license": "ISC",
   "dependencies": {
     "immutable": "^3.8.1",
-    "redux": "^3.6.0"
+    "redux": "^3.6.0",
+    "lodash": "^4.17.2"
   },
   "devDependencies": {
     "babel-preset-latest": "^6.16.0",
     "del": "^2.2.2",
+    "eslint": "^3.12.2",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "2.2.3",
+    "eslint-plugin-react": "^6.8.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
+    "gulp-eslint": "^3.0.1",
     "mocha": "^3.1.0",
     "why": "^0.1.12"
   },
@@ -27,6 +34,12 @@
   "babel": {
     "presets": [
       "latest"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "airbnb",
+    "plugins": [
+      "import"
     ]
   }
 }

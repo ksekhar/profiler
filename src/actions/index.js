@@ -1,32 +1,31 @@
 // var exports = module.exports = {};
+import _ from 'lodash';
 
-const SELECT_PROFILE = 'SELECT_PROFILE'
-const SET_PROFILE_FILTER = 'SET_PROFILE_FILTER'
-import _ from 'lodash'
+// const SELECT_PROFILE = 'SELECT_PROFILE';
+// const SET_PROFILE_FILTER = 'SET_PROFILE_FILTER';
 
-const ProfileFilter = {
-  BY_SKILLS: 'BY_SKILLS'
-}
+// function selectProfile(id) {
+//   return { type: SELECT_PROFILE, id };
+// }
 
-function selectProfile(id) {
-  return { type: SELECT_PROFILE, id }
-}
+// function setProfileFilter(filter) {
+//   return { type: SET_PROFILE_FILTER, filter };
+// }
 
-function setProfileFilter(filter) {
-  return { type: SET_PROFILE_FILTER, filter }
-}
-
-export function bySkills(skills, profileList, payload) {
-    var currentFilterSkill = skills.find(function(skill){
-      return skill.name === payload;
-    });
-    var list = profileList.filter(function(profile) {
-      return _.has(profile.skillExperience, currentFilterSkill.id);
-    });
-    return {
-      type: 'BY_SKILLS',
-      payload: list
+export default function bySkills(skills, profileList, payload) {
+  const currentFilterSkill = skills.find(skill =>
+    skill.name === payload,
+  );
+  const profileIds = [];
+  profileList.forEach((profile) => {
+    if (_.has(profile.skillExperience, currentFilterSkill.id)) {
+      profileIds.push(profile.id);
     }
+  });
+  return {
+    type: 'BY_SKILLS',
+    payload: profileIds,
+  };
 }
 
 
